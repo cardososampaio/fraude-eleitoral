@@ -1,0 +1,480 @@
+{
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "genero": {
+      "type": "string",
+      "enum": [
+        "noticia",
+        "opiniao",
+        "entrevista",
+        "checagem",
+        "explicador",
+        "outro",
+        "ambiguo"
+      ]
+    },
+    "genero_evidencias": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "ref": {
+            "type": "string"
+          },
+          "trecho": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "ref",
+          "trecho"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "integridade": {
+      "type": "string",
+      "enum": [
+        "integral_conferido",
+        "parcial",
+        "incompativel",
+        "indisponivel"
+      ]
+    },
+    "integridade_evidencias": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "ref": {
+            "type": "string"
+          },
+          "trecho": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "ref",
+          "trecho"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "pertinencia": {
+      "type": "string",
+      "enum": [
+        "central",
+        "contextual",
+        "fora_do_objeto",
+        "indeterminavel"
+      ]
+    },
+    "pertinencia_evidencias": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "ref": {
+            "type": "string"
+          },
+          "trecho": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "ref",
+          "trecho"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "alegacoes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "proposicao": {
+            "type": "string"
+          },
+          "modalidade": {
+            "type": "string",
+            "enum": [
+              "afirmacao_fraude",
+              "suspeita",
+              "negacao_fraude",
+              "irregularidade_sem_fraude_afirmada",
+              "integridade_preventiva"
+            ]
+          },
+          "objetos": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": [
+                "votacao",
+                "apuracao_totalizacao",
+                "divulgacao",
+                "cadastro_identificacao",
+                "candidaturas_filiacao_cotas",
+                "campanha_financiamento",
+                "pesquisas_eleitorais",
+                "integridade_geral",
+                "outro"
+              ]
+            }
+          },
+          "alcance": {
+            "type": "string",
+            "enum": [
+              "localizado",
+              "sistemico",
+              "nao_especificado"
+            ]
+          },
+          "alegador": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "alvo": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "tratamento_titulo": {
+            "type": "string",
+            "enum": [
+              "atribuida",
+              "sustentada",
+              "contestada",
+              "inconclusiva",
+              "mista",
+              "nao_determinavel",
+              "nao_mencionada"
+            ]
+          },
+          "tratamento_corpo": {
+            "type": "string",
+            "enum": [
+              "atribuida",
+              "sustentada",
+              "contestada",
+              "inconclusiva",
+              "mista",
+              "nao_determinavel"
+            ]
+          },
+          "voz_tratamento": {
+            "type": "string",
+            "enum": [
+              "jornalistica",
+              "fonte",
+              "ambas",
+              "indeterminavel"
+            ]
+          },
+          "situacao_relatada": {
+            "type": "string",
+            "enum": [
+              "suspeita",
+              "investigacao",
+              "denuncia_formal",
+              "decisao",
+              "recurso",
+              "arquivamento",
+              "sem_informacao",
+              "nao_se_aplica"
+            ]
+          },
+          "evidencias_mobilizadas": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "tipo": {
+                  "type": "string",
+                  "enum": [
+                    "declaracao",
+                    "documento",
+                    "decisao",
+                    "dados",
+                    "pericia",
+                    "imagem_video_audio",
+                    "testemunho",
+                    "nenhuma_explicitada"
+                  ]
+                },
+                "disponibilidade": {
+                  "type": "string",
+                  "enum": [
+                    "apresentada",
+                    "apenas_mencionada",
+                    "referenciada_link"
+                  ]
+                },
+                "evidencias": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "ref": {
+                        "type": "string"
+                      },
+                      "trecho": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "ref",
+                      "trecho"
+                    ],
+                    "additionalProperties": false
+                  }
+                }
+              },
+              "required": [
+                "tipo",
+                "disponibilidade",
+                "evidencias"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "evidencias": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "ref": {
+                  "type": "string"
+                },
+                "trecho": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "ref",
+                "trecho"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "tratamento_evidencias": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "ref": {
+                  "type": "string"
+                },
+                "trecho": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "ref",
+                "trecho"
+              ],
+              "additionalProperties": false
+            }
+          }
+        },
+        "required": [
+          "proposicao",
+          "modalidade",
+          "objetos",
+          "alcance",
+          "alegador",
+          "alvo",
+          "tratamento_titulo",
+          "tratamento_corpo",
+          "voz_tratamento",
+          "situacao_relatada",
+          "evidencias_mobilizadas",
+          "evidencias",
+          "tratamento_evidencias"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "atores": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "nome": {
+            "type": "string"
+          },
+          "papeis": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": [
+                "acusador",
+                "acusado",
+                "respondente",
+                "verificador",
+                "especialista",
+                "mencao"
+              ]
+            }
+          },
+          "evidencias": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "ref": {
+                  "type": "string"
+                },
+                "trecho": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "ref",
+                "trecho"
+              ],
+              "additionalProperties": false
+            }
+          }
+        },
+        "required": [
+          "nome",
+          "papeis",
+          "evidencias"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "episodios": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "descricao": {
+            "type": "string"
+          },
+          "acao": {
+            "type": "string"
+          },
+          "data": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "local": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "evidencias": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "ref": {
+                  "type": "string"
+                },
+                "trecho": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "ref",
+                "trecho"
+              ],
+              "additionalProperties": false
+            }
+          }
+        },
+        "required": [
+          "descricao",
+          "acao",
+          "data",
+          "local",
+          "evidencias"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "enquadramento": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "elemento": {
+            "type": "string",
+            "enum": [
+              "problema",
+              "causa",
+              "responsabilidade",
+              "avaliacao",
+              "solucao"
+            ]
+          },
+          "enunciador": {
+            "type": "string"
+          },
+          "descricao": {
+            "type": "string"
+          },
+          "evidencias": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "ref": {
+                  "type": "string"
+                },
+                "trecho": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "ref",
+                "trecho"
+              ],
+              "additionalProperties": false
+            }
+          }
+        },
+        "required": [
+          "elemento",
+          "enunciador",
+          "descricao",
+          "evidencias"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "pendencias": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "required": [
+    "id",
+    "genero",
+    "genero_evidencias",
+    "integridade",
+    "integridade_evidencias",
+    "pertinencia",
+    "pertinencia_evidencias",
+    "alegacoes",
+    "atores",
+    "episodios",
+    "enquadramento",
+    "pendencias"
+  ],
+  "additionalProperties": false
+}
