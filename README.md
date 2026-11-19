@@ -29,6 +29,7 @@ O primeiro comando aplica a regra de inclusão à tabela única de triagem, cons
 - [Dicionário dos dados](docs/DICIONARIO_DADOS.md): arquivos, unidades, campos e denominadores.
 - [Referências e fontes](docs/REFERENCIAS.md): materiais de contexto e URLs de origem.
 - [Relatório interativo](report/index.html).
+- [Versão PDF do relatório](report/relatorio_cobertura_fraude_2026.pdf).
 
 ## Estrutura dos dados
 
